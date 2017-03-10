@@ -21,9 +21,16 @@ function padLeft (str, max) {
 	return (pad + str).slice(-pad.length);
 }
 
+function showHeader() {
+	console.log(padLeft("Name",  10), padLeft("Address", 35), padLeft("Country", 20), padLeft("Salary", 20))
+	console.log("--".repeat(50));
+}
+
+showHeader();
 employees.forEach(function(employee){
 	var location;
 	var country;
+	var salary;
   
 	var address = employee.address;
 	if (address != null) {
@@ -31,5 +38,5 @@ employees.forEach(function(employee){
 		country = address.country;
 	}
 	
-	console.log(padLeft(employee.name,  10), padLeft("|", 5), padLeft(location, 30), padLeft("|", 5), padLeft(country, 15))	
+	console.log(padLeft(employee.name,  10), padLeft("|", 5), padLeft(location, 30), padLeft("|", 5), padLeft(country, 15), padLeft("|", 5), padLeft(salary, 15))	
 });
