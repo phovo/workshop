@@ -16,10 +16,11 @@ class Program
 													
     static void Main()
     {
-        Console.WriteLine("{0}\t{1} {2}", "Name".PadLeft(10), "Address".PadLeft(30), "Country".PadLeft(15));
-        Console.WriteLine(new String('-', 65));
+        string salary = null;
+        Console.WriteLine("{0}\t{1} {2} {3}", "Name".PadLeft(10), "Address".PadLeft(30), "Country".PadLeft(15), "Salary".PadLeft(20));
+        Console.WriteLine(new String('-', 85));
         foreach (Employee employee in employees) {
-            Console.WriteLine("{0}\t", employee.ToString());
+            Console.WriteLine("{0}\t{1}", employee.ToString(), "|" + ("" + salary).PadLeft(10));
         }
     }
 }
@@ -85,6 +86,3 @@ public enum Role {
 	DEV,
 	QA
 }
-
-
-

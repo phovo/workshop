@@ -1,6 +1,3 @@
-/**
- * 
- */
 var Role = {
 	PM: "PM",
 	DEV: "DEV",
@@ -20,36 +17,19 @@ var employees = [{id: 1, name: "Laura", role: Role.PM, address: {location: "Pfal
 
 
 function padLeft (str, max) {
-	return str;
+	var pad = " ".repeat(max);
+	return (pad + str).slice(-pad.length);
 }
 
 employees.forEach(function(employee){
-	var location = "N/A";
-	var country = "N/A";
+	var location;
+	var country;
   
 	var address = employee.address;
 	if (address != null) {
-		if (address.location != null) {
-			location = address.location;
-		}
-		if (address.country != null) {
-			country = address.country;
-		}
+		location = address.location;
+		country = address.country;
 	}
 	
-	var salaryValue = "N/A";
-	for (var role in Role) {
-		if (Role.PM === employee.role) {
-			salaryValue = Salary.PM
-		}
-		if (Role.DEV === employee.role) {
-			salaryValue = Salary.DEV
-		}
-		if (Role.QA === employee.role) {
-			salaryValue = Salary.QA
-		}
-	}
-	
-	console.log(padLeft(employee.name, 10), padLeft("|", 5), padLeft(location, 30), padLeft("|", 15), padLeft(country, 10), padLeft("|", 15), padLeft(salaryValue, 10))
-	
+	console.log(padLeft(employee.name,  10), padLeft("|", 5), padLeft(location, 30), padLeft("|", 5), padLeft(country, 15))	
 });
