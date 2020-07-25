@@ -7,7 +7,7 @@ var Role = {
 var Salary = {
 	PM: 6000,
 	DEV: 5000,
-	QA: 3000
+	QA: 1000
 }
 	
 var employees = [{id: 1, name: "Laura", role: Role.PM, address: {location: "Pfalzgasse 1, Zurich", country: "Switzerland"}},
